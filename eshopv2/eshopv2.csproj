@@ -1178,6 +1178,7 @@
       <DependentUpon>dsPrint.xsd</DependentUpon>
     </Content>
     <Content Include="kupindoXml.ashx" />
+    <Content Include="log\error.log" />
     <None Include="webshopAdmin\dsPrint.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsPrint2.Designer.cs</LastGenOutput>
