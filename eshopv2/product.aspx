@@ -19,6 +19,9 @@
         <!--images, name, price-->
         <div class="row">
             <div class="col-sm-5">
+                <div class="nis-cont" id="divNis" runat="server" style="display:none">
+                    <span class="nis-label">Nema na stanju</span>
+                </div>
                 <uc1:ProductImages ID="priProductImages" runat="server" />
                 <asp:Image ID="imgPromotion" runat="server" Visible="false" CssClass="imgPromotion" />
             </div><!--col-->
@@ -29,7 +32,7 @@
                 <p>Pogledajte i ostale proizvode iz kategorije <asp:HyperLink ID="lnkCategory" runat="server" CssClass="underline"></asp:HyperLink></p>
                 
                 <!--Kredit i rate-->
-                <div class="row loanBox">
+                <div class="row loanBox" runat="server" visible="false">
                     <div class="col-sm-1">
                         <img src='<%=Page.ResolveUrl("~/images/loan.gif") %>' />
                     </div>
@@ -52,15 +55,16 @@
                     <div class="col-sm-6">
                         <p>Dostupnost:</p>
                         <p class="bold uppercase"><asp:Literal ID="txtAvailability" runat="server" Text="Na stanju"></asp:Literal></p>
-                        <p class="margin-top-2">Očekivani rok isporuke:</p>
-                        <p><asp:Literal ID="txtDelivery" runat="server" Text="-"></asp:Literal></p>
+                        <p class="margin-top-2">Očekivani rok isporuke:
+                        <asp:Literal ID="txtDelivery" runat="server" Text="-"></asp:Literal></p>
+                        <p><span>Šifra proizvoda: </span><asp:Literal ID="txtCode" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-sm-6 text-right">
                         <p class="margin-bottom-0"><asp:Literal ID="lblPrice" runat="server" Text="MP 110.989 din"></asp:Literal></p>
                         <p class="font-2em color-blue bold margin-bottom-0"><asp:Label ID="lblWebPrice" runat="server" Text="99.890 din"></asp:Label></p>
                         <p><asp:Literal ID="lblSaving" runat="server" Text="Ušteda: 2.548,00 din"></asp:Literal></p>
                         <!--<asp:Button ID="btnCart" runat="server" CssClass="btnAddToCart" Text="Dodaj u korpu" OnClick="btnCart_Click" />-->
-                        <button type="button" id="btnCart" class="btnAddToCart" onclick="AddToCart('<%=lblProductID.ClientID %>')">Dodaj u korpu</button>
+                        <button type="button" id="btnCartAjax" class="btnAddToCart" onclick="AddToCart('<%=lblProductID.ClientID %>')" runat="server"><span class="glyphicon glyphicon-shopping-cart"></span> <asp:Label ID="lblCartLabel" runat="server">Dodaj u korpu</asp:Label></button>
                     </div>
                 </div><!--row-->
                 <div class="row icons">

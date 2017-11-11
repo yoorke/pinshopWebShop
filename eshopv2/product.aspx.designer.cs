@@ -13,6 +13,15 @@ namespace eshopv2 {
     public partial class product {
         
         /// <summary>
+        /// divNis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNis;
+        
+        /// <summary>
         /// priProductImages control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace eshopv2 {
         protected global::System.Web.UI.WebControls.Literal txtDelivery;
         
         /// <summary>
+        /// txtCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal txtCode;
+        
+        /// <summary>
         /// lblPrice control.
         /// </summary>
         /// <remarks>
@@ -119,6 +137,24 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCart;
+        
+        /// <summary>
+        /// btnCartAjax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnCartAjax;
+        
+        /// <summary>
+        /// lblCartLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCartLabel;
         
         /// <summary>
         /// btnCompare control.

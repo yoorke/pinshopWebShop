@@ -95,6 +95,20 @@ namespace eshopv2
             lnkCategory.Text = product.Categories[0].Name;
 
             loadProductSliders(product.Categories[0]);
+
+            txtAvailability.Text = product.IsInStock ? "NA STANJU" : "NEMA NA STANJU";
+
+            txtCode.Text = product.Code;
+
+            if (!product.IsInStock)
+            {
+                btnCartAjax.Attributes.Add("disabled", "true");
+                btnCartAjax.Attributes.Add("css", "btnAddToCart not-in-stock");
+                btnCartAjax.Style.Add("background-color", "#999");
+                divNis.Style.Add("display", "block");
+                txtDelivery.Text = "-";
+                lblCartLabel.Text = "Nema na stanju";
+            }
         }
 
         protected void btnCart_Click(object sender, EventArgs e)
