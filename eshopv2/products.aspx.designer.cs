@@ -22,6 +22,33 @@ namespace eshopv2 {
         protected global::System.Web.UI.WebControls.Literal canonicalUrl;
         
         /// <summary>
+        /// breadcrumbs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Breadcrumbs breadcrumbs;
+        
+        /// <summary>
+        /// subcategoriesDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subcategoriesDiv;
+        
+        /// <summary>
+        /// rptSubcategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSubcategories;
+        
+        /// <summary>
         /// brandLabel control.
         /// </summary>
         /// <remarks>

@@ -13,6 +13,15 @@ namespace eshopv2 {
     public partial class product {
         
         /// <summary>
+        /// breadcrumbs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Breadcrumbs breadcrumbs;
+        
+        /// <summary>
         /// divNis control.
         /// </summary>
         /// <remarks>
@@ -155,15 +164,6 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCartLabel;
-        
-        /// <summary>
-        /// btnCompare control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCompare;
         
         /// <summary>
         /// lblProductFacebookLike control.

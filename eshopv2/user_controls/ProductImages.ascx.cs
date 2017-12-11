@@ -91,5 +91,10 @@ namespace eshopv2.user_controls
             rptImages.DataSource = tempImages;
             rptImages.DataBind();
         }
+
+        public string GetMainImageUrl()
+        {
+            return imgMain.ImageUrl;
+        }
     }
 }

@@ -24,19 +24,19 @@
                     <div class="form-group">
                         <label for="txtLastname" class="control-label col-lg-2">Prezime: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtLastname" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtLastname" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtFirstname" class="control-label col-lg-2">Ime: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtFirstname" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtFirstname" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtEmail" class="control-label col-lg-2">Email: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtEmail" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label for="txtPhone" class="control-label col-lg-2">Telefon: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtPhone" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -54,19 +54,19 @@
                     <div class="form-group">
                         <label for="txtAddress" class="control-label col-lg-2">Adresa: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtAddress" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtCity" class="control-label col-lg-2">Mesto: </label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtCity" runat="server" CssClass="col-lg-12"></asp:TextBox>
+                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtZip" class="control-label col-lg-2">Ptt:</label>
                         <div class="col-lg-10">
-                            <asp:TextBox ID="txtZip" runat="server" CssClass="col-lg-5"></asp:TextBox>
+                            <asp:TextBox ID="txtZip" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
@@ -78,7 +78,7 @@
         <div class="row margin-top-05">
             <div class="col-lg-1"></div>
             <div class="col-lg-1">
-                <asp:Button ID="btnSave" runat="server" CssClass="btn btn-default" Text="Sačuvaj" OnClick="btnSave_Click" />
+                <asp:Button ID="btnSave" runat="server" CssClass="btn btn-primary" Text="Sačuvaj" OnClick="btnSave_Click" />
             </div>
             <div class="col-lg-1">
                 <asp:Button ID="btnChangePassword" runat="server" CssClass="btn btn-default" Text="Izmena šifre" OnClick="btnChangePassword_Click" />
@@ -88,17 +88,17 @@
             <div class="col-lg-12">
                 <asp:Repeater ID="rptOrders" runat="server" OnItemDataBound="rptOrders_ItemDataBound">
                     <HeaderTemplate>
-                        <table class="table table-condensed table-striped" style="width:50%">
+                        <table class="table table-condensed table-striped"
                             <tr>
                                 <th style="width:20em">Datum</th>
-                                <th>Iznos</th>
+                                <th style="text-align:right">Iznos</th>
                                 <th style="width:10em">Status</th>
                                 <th style="width:2em"></th>
                             </tr>
                         </table>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <table class="table" style="width:50%">
+                        <table class="table account-orders" style="width:50%">
                            <tr>
                                <td style="width:20em"><%#Eval("date") %></td>
                                <td style="width:10em" class="text-right"><%#string.Format("{0:N2}", double.Parse(Eval("total").ToString())) %></td>

@@ -2,6 +2,7 @@
 <%@ Register Src="user_controls/ProductImages.ascx" TagName="ProductImages" TagPrefix="uc1" %>
 <%@ Register Src="user_controls/Banner.ascx" TagName="Banner" TagPrefix="banner" %>
 <%@ Register Src="user_controls/product_slider.ascx" TagName="productSlider" TagPrefix="productSlider" %>
+<%@ Register Src="~/user_controls/Breadcrumbs.ascx" TagName="Breadcrumbs" TagPrefix="ws" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>-->
     <link rel="stylesheet" type="text/css" media="all" href="/css/lightbox.css" />
@@ -15,6 +16,7 @@
     </div><!--col-banner-->--%>
             
     <!--MAIN CONTENT-->
+    <ws:Breadcrumbs ID="breadcrumbs" runat="server" />
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-content product-content">
         <!--images, name, price-->
         <div class="row">
@@ -68,25 +70,33 @@
                     </div>
                 </div><!--row-->
                 <div class="row icons">
-                    <div class="col-xs-1">
-                        <img src='<%=Page.ResolveUrl("~/images/compare.gif") %>' />
-                        
-                    </div>
-                    <div class="col-xs-3"><!--<asp:LinkButton ID="btnCompare" runat="server" Text="Uporedi" OnClientClick="btnCompare_Click('<%=lblProductID.ClientID %>')"></asp:LinkButton>-->
-                        <!--<button type="button" id="btnCompare" onclick="btnCompare_Click('<%=lblProductID.ClientID %>')">Uporedi</button>-->
+                    <div class="col-xs-3">
+                        <%--<img src='<%=Page.ResolveUrl("~/images/compare.gif") %>' />--%>
+                        <span class="fa fa-fw fa-bar-chart"></span>
                         <label onclick="btnCompare_Click('<%=lblProductID.ClientID %>')" class="cursor-pointer bold-none">Uporedi</label>
+                    </div>
+                    <%--<div class="col-xs-3">
+                        <!--<asp:LinkButton ID="btnCompare" runat="server" Text="Uporedi" OnClientClick="btnCompare_Click('<%=lblProductID.ClientID %>')"></asp:LinkButton>-->
+                        <!--<button type="button" id="btnCompare" onclick="btnCompare_Click('<%=lblProductID.ClientID %>')">Uporedi</button>-->
+                        
 
+                    </div>--%>
+                    <div class="col-xs-3">
+                        <%--<img src='<%=Page.ResolveUrl("~/images/wishlist.gif") %>' />--%>
+                        <span class="fa fa-fw fa-heart"></span>
+                        <label onclick="AddToWishList()" class="cursor-pointer bold-none">Lista želja</label>
                     </div>
-                    <div class="col-xs-1">
-                        <img src='<%=Page.ResolveUrl("~/images/wishlist.gif") %>' />
-                        
+                    <%--<div class="col-xs-3"></div>--%>
+                    <div class="col-xs-3">
+                        <%--<img src='<%=Page.ResolveUrl("~/images/recommend.gif") %>' />--%>
+                        <span class="fa fa-fw fa-envelope"></span>
+                        <label onclick="recommend()" class="cursor-pointer bold-none">Preporučite</label>
                     </div>
-                    <div class="col-xs-3"><label onclick="AddToWishList()" class="cursor-pointer bold-none">Lista želja</label></div>
-                    <div class="col-xs-1">
-                        <img src='<%=Page.ResolveUrl("~/images/recommend.gif") %>' />
-                        
+                    <%--<div class="col-xs-3"></div>--%>
+                    <div class="col-xs-3">
+                        <span class="fa fa-fw fa-print"></span>
+                        <a href="<%=ResolveUrl("~/stampa-proizvoda/" + lblProductID.Value) %>" target="_blank" class="cursor-pointer bold-none">Štampaj</a>
                     </div>
-                    <div class="col-xs-3"><label onclick="recommend()" class="cursor-pointer bold-none">Preporučite</label></div>
                 </div><!--row-->
                 <div class="row margin-top-2">
                     <div class="col-lg-12 text-right">

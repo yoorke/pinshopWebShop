@@ -68,6 +68,9 @@ namespace eshopv2
             ProductBL productBL = new ProductBL();
             Product product = productBL.GetProduct(productID, string.Empty, true, string.Empty);
 
+            if (product == null)
+                Server.Transfer("~/not-found.aspx");
+
             //images = product.Images;
             priProductImages.Images = product.Images;
             priProductImages.ShowImages();
@@ -89,7 +92,8 @@ namespace eshopv2
             Page.Title = product.Brand.Name + " " + product.Name;
             ViewState.Add("pageTitle", Page.Title);
             ViewState.Add("productDescription", product.Description);
-            ViewState.Add("image", product.Images[0]);
+            ViewState.Add("image", priProductImages.GetMainImageUrl());
+            ViewState.Add("specification", product.Specification);
 
             lnkCategory.NavigateUrl = "/proizvodi/" + product.Categories[0].Url;
             lnkCategory.Text = product.Categories[0].Name;
@@ -166,7 +170,7 @@ namespace eshopv2
             tag = new HtmlMeta();
             tag.Attributes.Clear();
             tag.Attributes.Add("property", "og:description");
-            tag.Attributes.Add("content", string.Empty);
+            tag.Attributes.Add("content", ViewState["specification"].ToString());
             Header.Controls.Add(tag);
 
             HtmlLink link = new HtmlLink();

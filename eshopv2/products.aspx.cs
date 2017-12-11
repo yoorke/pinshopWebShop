@@ -114,6 +114,7 @@ namespace eshopv2
                 loadBrands(categoryUrl, brandIDs, false);
                 loadFilter(categoryUrl, attributeIDs);
                 loadPrices(categoryUrl, priceFrom, priceTo, category.ParentCategoryID == 1);
+                loadSubcategories(category.CategoryID);
 
                 
                 ViewState["pageTitle"] = category.Name + " | PinShop";
@@ -294,7 +295,7 @@ namespace eshopv2
                                 attributes.Add(new AttributeValue(int.Parse(value.Value), value.Text, attributeID, 0, string.Empty, 0));
                 }
 
-            List<Product> products = new ProductBL().GetProducts(ViewState["categoryUrl"].ToString(), brands, attributes, sort, cmbPriceFrom.SelectedItem.Text, cmbPriceTo.SelectedItem.Text);
+            List<Product> products = new ProductBL().GetProducts(ViewState["categoryUrl"].ToString(), brands, attributes, sort, cmbPriceFrom.SelectedItem.Text, cmbPriceTo.SelectedItem.Text, bool.Parse(ConfigurationManager.AppSettings["includeProductsFromChildrenCategories"]));
 
             PagedDataSource pagedDataSource = new PagedDataSource();
             pagedDataSource.DataSource = products;
@@ -325,6 +326,17 @@ namespace eshopv2
                 rptProducts.DataSourceID = null;
                 rptProducts.DataBind();
                 divStatus.Visible = true;
+            }
+        }
+
+        private void loadSubcategories(int categoryID)
+        {
+            if(bool.Parse(ConfigurationManager.AppSettings["showSubcategoriesBeforeProducts"]))
+            {
+                subcategoriesDiv.Visible = true;
+                List<Category> subcategories = new CategoryBL().GetFirstLevelSubcategories(categoryID);
+                rptSubcategories.DataSource = subcategories;
+                rptSubcategories.DataBind();
             }
         }
     }

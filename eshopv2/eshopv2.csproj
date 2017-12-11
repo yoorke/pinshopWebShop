@@ -112,6 +112,7 @@
     <Content Include="js\modernizr.js" />
     <Content Include="js\registration.js" />
     <Content Include="kontakt.aspx" />
+    <Content Include="not-found.aspx" />
     <Content Include="passwordChange.aspx" />
     <Content Include="passwordChanged.aspx" />
     <Content Include="passwordReset.aspx" />
@@ -120,7 +121,13 @@
     <Content Include="products.aspx" />
     <Content Include="promotion.aspx" />
     <Content Include="registration.aspx" />
+    <Content Include="reportTemplates\product\productPrint.aspx" />
+    <Content Include="reportTemplates\product\productReportTemplate.html" />
+    <Content Include="reportTemplates\report-style.css" />
+    <Content Include="reportTemplates\reportFooterTemplate.html" />
+    <Content Include="reportTemplates\reportHeaderTemplate.html" />
     <Content Include="search.aspx" />
+    <Content Include="user_controls\Breadcrumbs.ascx" />
     <Content Include="user_controls\CategoryBanner.ascx" />
     <Content Include="user_controls\MainMenuVertical.ascx" />
     <Content Include="user_controls\MainMenuVerticalV2.ascx" />
@@ -204,6 +211,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="not-found.aspx.cs">
+      <DependentUpon>not-found.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="not-found.aspx.designer.cs">
+      <DependentUpon>not-found.aspx</DependentUpon>
+    </Compile>
     <Compile Include="orderSuccessful.aspx.cs">
       <DependentUpon>orderSuccessful.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +296,13 @@
     <Compile Include="registration.aspx.designer.cs">
       <DependentUpon>registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="reportTemplates\product\productPrint.aspx.cs">
+      <DependentUpon>productPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportTemplates\product\productPrint.aspx.designer.cs">
+      <DependentUpon>productPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Routes.cs" />
     <Compile Include="search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
@@ -290,12 +311,22 @@
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SitemapHandler.ashx.cs">
+      <DependentUpon>SitemapHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\Banner.ascx.cs">
       <DependentUpon>Banner.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="user_controls\Banner.ascx.designer.cs">
       <DependentUpon>Banner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user_controls\Breadcrumbs.ascx.cs">
+      <DependentUpon>Breadcrumbs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_controls\Breadcrumbs.ascx.designer.cs">
+      <DependentUpon>Breadcrumbs.ascx</DependentUpon>
     </Compile>
     <Compile Include="user_controls\Cart.ascx.cs">
       <DependentUpon>Cart.ascx</DependentUpon>
@@ -1172,6 +1203,8 @@
     </Content>
     <Content Include="kupindoXml.ashx" />
     <Content Include="log\error.log" />
+    <Content Include="Web.sitemap" />
+    <Content Include="SitemapHandler.ashx" />
     <None Include="webshopAdmin\dsPrint.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsPrint2.Designer.cs</LastGenOutput>
@@ -1199,6 +1232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="reportTemplates\product\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

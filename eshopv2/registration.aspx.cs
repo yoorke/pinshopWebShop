@@ -9,7 +9,7 @@ using eshopBL;
 using eshopUtilities;
 using System.Web.Security;
 
-namespace eshopv2
+namespace etnokeramikaWebShop
 {
     public partial class registration : System.Web.UI.Page
     {
@@ -17,7 +17,7 @@ namespace eshopv2
         {
             Master.FindControl("mainMenuVertical").Visible = true;
             txtLastname.Focus();
-            botDetect1.UserInputClientID = CaptchaCode.ClientID;
+            //botDetect1.UserInputClientID = CaptchaCode.ClientID;
         }
 
         protected void btnCreateUser_Click(object sender, EventArgs e)
@@ -44,6 +44,9 @@ namespace eshopv2
                             divRegistration.Visible = false;
                             divLoginMessage.Visible = true;
                             lblLoginText.InnerText = "Korisnički nalog je uspešno kreiran";
+                            //Page.Response.Redirect("~/");
+
+                            Common.SendUserCreatedConfirmationMail(txtEmail.Text, txtPassword.Text);
                         }
                     }
                     else

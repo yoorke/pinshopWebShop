@@ -6,7 +6,7 @@
     <div class="col-lg-12 page-content">
         <div class="row text-center">
             <div class="col-lg-12">
-                <h1 class="heading">Prijava<span class="width-100">werwerwe</span></h1>
+                <h1 class="heading">Prijava<span class="width-100"></span></h1>
             </div>
         </div>
         <div class="row">
@@ -61,7 +61,7 @@
                                         <tr>
                                             <td align="right" colspan="2">
                                                 <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" 
-                                                    ValidationGroup="login" />
+                                                    ValidationGroup="login" CssClass="btn btn-primary width-100" />
                                             </td>
                                         </tr>
                                     </table>

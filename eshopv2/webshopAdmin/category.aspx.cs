@@ -87,11 +87,15 @@ namespace webshopAdmin
                 category.ExternalParentID = int.Parse(txtExternalParentID.Text != string.Empty ? txtExternalParentID.Text : "0");
                 category.ShowInFooter = chkShowInFooter.Checked;
                 category.ImageUrlSource = rdbImageTypeStandard.Checked ? 0 : 1;
-                category.ImageUrlPositionX = int.Parse(txtPositionX.Text);
-                category.ImageUrlPositionY = int.Parse(txtPositionY.Text);
+                int positionX = 0;
+                int positionY = 0;
+                category.ImageUrlPositionX = int.TryParse(txtPositionX.Text, out positionX) ? int.Parse(txtPositionX.Text) : 0;
+                category.ImageUrlPositionY = int.TryParse(txtPositionY.Text, out positionY) ? int.Parse(txtPositionY.Text) : 0;
 
                 CategoryBL categoryBl = new CategoryBL();
-                categoryBl.SaveCategory(category);
+                int categoryID = categoryBl.SaveCategory(category);
+
+                lblCategoryID.Value = categoryID.ToString();
 
 
             }
