@@ -20,8 +20,8 @@ namespace eshopv2
             context.Response.ContentEncoding = Encoding.UTF8;
             //context.Response.Write("Hello World");
 
-            XmlDocument xmlDoc = new WebSitemapBL().CreateSitemap();
-            xmlDoc.Save(context.Response.Output);
+            //XmlDocument xmlDoc = new WebSitemapBL().CreateSitemap();
+            //xmlDoc.Save(context.Response.Output);
 
             context.Response.End();
         }

@@ -18,7 +18,7 @@ namespace eshopv2
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //new CustomRoutes().RegisterRoutes(RouteTable.Routes);
+            new CustomRoutes().RegisterRoutes(RouteTable.Routes);
             new RoutesBL().RegisterRoutes();
             new SitemapBL().SaveSitemap();
         }
